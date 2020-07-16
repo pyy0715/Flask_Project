@@ -3,7 +3,7 @@ from datetime import datetime
 from flask import Blueprint, render_template, request, url_for
 from werkzeug.utils import redirect
 
-from .. import db
+from pybo import db
 from pybo.models import Question
 from pybo.forms import QuestionForm, AnswerForm
 
@@ -22,7 +22,7 @@ def detail(question_id):
     question = Question.query.get_or_404(question_id)
     return render_template('question/question_detail.html', question=question, form=form)
 
-@bp.route('/create/', method=('GET', 'POST'))
+@bp.route('/create/', methods=('GET', 'POST'))
 def create():
     form = QuestionForm()
     if request.method=='POST' and form.validate_on_submit():
