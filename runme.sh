@@ -9,8 +9,10 @@ proj
 
 FLASK_APP=pybo
 FLASK_ENV=development
+APP_CONFIG_FILE=c:\projects\myproject\config\development.py
 export FLASK_APP
 export FLASK_ENV
+export APP_CONFIG_FILE
 flask run
 
 echo FLASK Config Setting is Done!
